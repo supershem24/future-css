@@ -9,14 +9,54 @@
 <body>
     <h1>The :has() CSS Pseudo-class</h1>
     <main>
-        <p>The <code>:has()</code> pseudo-class is a CSS selector that allows you to set different CSS properties for </p>
+        <p>The CSS pseudo-class <code>:has()</code> makes an element change based on realative selectors. To my knowledge, that means that elements can be affected by what children elements they have or what elements they have directly afterward. This new change allows for a lot of different new possibilities.</p>
+        <p class="newLine">For instance:</p>
         <section>
-            <img class="frog" src="images/Frog.png" alt="frog"/>
-            <img class="star" src="images/Star.png" alt="star"/>
+            <div>
+                <img class="frog" src="images/Frog.png" alt="frog" />
+            </div>
+            <div>
+                <img class="star" src="images/Star.png" alt="star" />
+            </div>
+            <div>
+                <img class="frog" src="images/Frog.png" alt="frog" />
+                <img class="star" src="images/Star.png" alt="star" />
+            </div>
+            <div>
+                <p>This is still blue color</p>
+            </div>
         </section>
+        <div>
+            <code>
+<pre>   div:has(.frog)
+    {
+        background-color: #C1FBA4;
+    }</pre>
+            </code>
+        </div>
+        <p class="newLine">
+            This can be used to change outside containers depending on what's inside it, like how in the upper example the frogs caused the div containers to be green. And in the bottom one, the stars affect something new:
+        </p>
         <section>
-            <img class="star" src="images/Star.png" alt="star" />
+            <div>
+                <img class="star" src="images/Star.png" alt="star" /> They Show
+            </div>
+            <div>
+                Whether or not
+            </div>
+            <div>
+                <img class="star" src="images/Star.png" alt="star" /> Text is bold
+            </div>
         </section>
+        <div>
+            <code>
+<pre>   div:has(.star)
+    {
+        font-weight: bold;
+    }</pre>
+            </code>
+        </div>
+        <p>If you'd like some more help with this check out <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:has">:Has() Web Doc</a> for some more info on :has()</p>
     </main>
     <script src="index.js"></script>
 </body>

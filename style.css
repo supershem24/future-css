@@ -5,7 +5,9 @@
     --LIGHTGREEN: #C1FBA4;
     --GREEN: #7BF1A8;
     --main-background: var(--PINK);
-    --sub-background: var(--GREEN);
+    --sub-background: var(--FLAX);
+    --selected-color: var(--LIGHTGREEN);
+    --unselected-color: var(--LIGHTBLUE);
 
     background-color: var(--LIGHTBLUE);
     text-align: center;
@@ -17,25 +19,70 @@ h1
     background-color: var(--GREEN);
     border: 3px solid;
     border-radius: 50%;
-    margin: 50px 6%;
+    margin: 50px 10px;
 }
 
 main
 {
     background-color: var(--main-background);
-    margin: 0 10%;
+    margin: 0 5%;
+    font-size: 1.5em;
 }
 
-section:has(.frog)
+p
 {
+    margin: 1% 10%;
+}
+
+.newLine
+{
+    break-before: auto;
+}
+
+section
+{
+    margin: 0 5%;
+    border: solid 1px;
     background-color: var(--sub-background);
+}
+
+section:has(div)
+{
+    padding: 25px 50px;
+}
+
+div
+{
+    background-color: var(--unselected-color);
+    border: solid 1px;
+}
+
+div:has(.frog)
+{
+    background-color: var(--selected-color);
 }
 
 .frog
 {
-    max-width: 256px;
+    max-width: 64px;
 }
 
-.star {
-    max-width: 256px;
+.star 
+{
+    max-width: 32px;
+}
+
+div:has(code)
+{
+    width: -moz-fit-content;
+    width: fit-content;
+    border: dashed 1px;
+    background-color: var(--GREEN);
+    text-align: left;
+    margin: 0 auto 0 5%;
+}
+
+div:has(.star)
+{
+    font-weight: bold;
 }
